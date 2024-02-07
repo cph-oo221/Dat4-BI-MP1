@@ -1,5 +1,10 @@
 # Dat4-MP1
 
+#### Group:
+
+- Lasse - Github: **[kotteletfisk](https://github.com/kotteletfisk)**
+- Oskar - Github: **[cph-oo221](https://github.com/cph-oo221)**
+
 ## Data Origins:
 
 [Stock Market Dataset](https://www.kaggle.com/datasets/borismarjanovic/price-volume-data-for-all-us-stocks-etfs?resource=download) - From Kaggle, txt file.
