@@ -35,6 +35,8 @@ The given data has been loaded using our own TXT reader, then it has been cleane
 
 Dataset for Movies and Tv Shows from streaming platfrom such as Netflix, Hulu, Prime Video, and so on.
 
+The movie and tv show data has been loaded using our own JSON reader, then it has been cleaned, explored, and visualized via. models and graphs such as scatter plot, histogram, box plot, bar chart.
+
 ### Python files / Jupyter Notebook:
 
 #### Json Reader:
