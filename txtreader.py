@@ -1,7 +1,6 @@
 
-import os
-from datetime import datetime
 import pandas as pd
+from meta import getMeta
 
 def read_txt(filename):
     with open(filename, 'r') as file:
@@ -9,7 +8,7 @@ def read_txt(filename):
 
     txt = getDfTxt(raw_txt)
     
-    mymeta = getMetaTxt(filename)
+    mymeta = getMeta(filename)
     
     return mymeta, txt
 
@@ -27,20 +26,3 @@ def getDfTxt(raw_txt):
     # Make DataFrame
     df = pd.DataFrame(data, columns=columns)
     return df
-
-
-def getMetaTxt(filename):
-    metadata = {}
-
-    time_pattern = '%Y-%m-%d %H:%M:%S'
-
-    pt = os.path
-    
-    metadata['created'] = unixtime_to_datetime(pt.getctime(filename), time_pattern)
-    metadata['modified'] = unixtime_to_datetime(pt.getmtime(filename), time_pattern)
-    metadata['size'] = pt.getsize(filename)
-    return metadata
-    
-
-def unixtime_to_datetime(unix, pattern):
-    return datetime.fromtimestamp(unix).strftime(pattern)
