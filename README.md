@@ -59,3 +59,7 @@ Methods for gathering html pages for analytical data, using http or https protoc
 consists of 2 functions, with one reading and preparing the data from an url, and the other to call the forementhioned recursively, and to return a pandas dataframe with the resulting data, consisting of the following columns:
 
 [filetype, title, metadata, body, link0, link1, link2, link3, level]
+
+
+[Html reader Example](./htmlReader.ipynb)
+An example analysis grouping scraped pages together in domains to see which domains are most common
