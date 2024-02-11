@@ -50,3 +50,12 @@ The movie and tv show data has been loaded using our own JSON reader, then it ha
 ## Additional Util For Project:
 
 [Meta Data Gathering](./meta.py)
+
+## HTML reader
+
+[Html Reader](./readhtml.py)
+
+Methods for gathering html pages for analytical data, using http or https protocol urls.
+consists of 2 functions, with one reading and preparing the data from an url, and the other to call the forementhioned recursively, and to return a pandas dataframe with the resulting data, consisting of the following columns:
+
+[filetype, title, metadata, body, link0, link1, link2, link3, level]

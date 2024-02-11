@@ -60,11 +60,11 @@ def readhtml(url: str) -> [str]:
 
 # takes an array of start urls, and integer representing the depth of the search
 # calls readhtml recursively and blacklists bad responses, and already visited pages
-# returns a pandas dataframe
+# returns a pandas dataframe, with ad added "level" attribute.
 
 def readhtml_recursively(start_urls: [str], max_depth: int):
     
-    df = pd.DataFrame(columns = ['filetype', 'domain', 'title', 'content', 'meta', 'link0', 'link1', 'link2', 'link3'])
+    df = pd.DataFrame(columns = ['filetype', 'domain', 'title', 'content', 'meta', 'link0', 'link1', 'link2', 'link3', 'level'])
     urls_to_read = start_urls
     black_list = []
     
@@ -72,9 +72,10 @@ def readhtml_recursively(start_urls: [str], max_depth: int):
         for url in urls_to_read:
             result = readhtml(url)
             if result != None:
-                df.loc[len(df.index)] = [*result]
+                df.loc[len(df.index)] = [*result, iteration]
             else:
                 black_list.append(url)
+            
 
         links0 = df['link0'].to_list()
         links1 = df['link1'].to_list()
